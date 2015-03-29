@@ -663,6 +663,16 @@ $(function() {
 		$(this).select();
 	});
 
+	windows.on("change", "input[name=autoconnect]", function() {
+		var checked = $(this).prop("checked");
+		$("input[name=autoconnect]").prop("checked", checked);
+		if(options.autoconnect == checked) {
+			return;
+		}
+		$("#settings").find("input[name=autoconnect]")
+			.trigger("change");
+	});
+
 	forms.on("submit", "form", function(e) {
 		e.preventDefault();
 		var event = "auth";
@@ -877,4 +887,10 @@ $(function() {
 			}
 		}
 	);
+
+	$(document).ready(function() {
+		if(options.autoconnect && $("body").hasClass("public")) {
+			$("#connect").find("form").submit();
+		}
+	});
 });

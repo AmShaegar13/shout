@@ -771,12 +771,12 @@ button {
 	margin: 9px 0 0 -17px;
 	position: absolute;
 }
-#connect .tls {
+#connect .tls, #connect .autoconnect {
 	float: left;
 	font-size: 14px;
 	margin-top: 6px;
 }
-#connect .tls input {
+#connect .tls input, #connect .autoconnect input {
 	float: left;
 	margin: 3px 10px 0 0;
 }
